@@ -1,0 +1,175 @@
+normal mode:
+    modes:
+        i - insert
+        a - append
+        V - visual line
+        v - visual mode
+        : - command
+        Space - leader
+        <C-v> - visual block
+    moving:
+        j - down
+        k - up
+        h - left
+        l - right
+        H - cursor move to top of screen
+        L - cursor move to bottom of screen
+        gg - beginning of file
+        GG - end of file
+        e - end of next word
+        b - end of last word
+        w - beginning of next word
+        0 - beginning of line
+        $ - end of line
+        ALT-SHIT-} - next block
+        ALT-SHIT-{ - previous block
+        <C-u> - up a page
+        <C-d> - down a page
+        zt - cursor top of screen
+        zz - cursor
+        tX - forward until character X
+        TX - backward until character X
+        fX - forward to character X
+        FX - backward to character X
+        XG - go to line X
+    text:
+        dd - delete line
+        dw - delete until end of word
+        d-Space - delete character
+        ciw - delete word and insert mode 
+        ci( or ci) - delete between () and insert mode
+        ci[ or ci] - delete between [] and insert mode
+        ci" or ci' - delete between "" or '' and insert mode
+        rX - replace current character with character X
+        x - delete current character
+        <C-V> - paste from clipboard
+        p - paste as o
+        P - paste as O
+        o - insert mode new next line
+        O - insert mode this line new
+        J - delete next line
+        "XY - do Y command to X register, Y can be yank/paste/delete
+        X - backspace
+        x - delete character
+        = - auto format
+        gcc - comment line using single-line comments
+        gbc - comment line use block comments
+        Xgcc or Xgbc - comment X number of lines
+    commands:
+        Space-Y - yank line to sys buffer
+        /X - search for X
+        n - next match
+        N - previous match
+        <C-c> - cancel
+        <C-e> - harpoon:
+           <C-h/t/n/s> - file 1/2/3/4
+           Space-a - add file
+        Space-pv - netrw:
+            % - new file
+            d - new directory
+        Space-pf - grep for file
+        Space-ps - grep in file
+        Space-gs - git
+        Space-u - undotree toggle
+        LSP-COMMANDS:
+            <C-p> - select previous item
+            <C-n> - select next item
+            <C-y> - confirm
+            <C-Space> - complete
+        Space-gd - while over the name of a file, go to that
+        Space-s - replace all of current word
+        :!X - bash command X on the text
+        Space-ff - focus on file tree or open
+        Space-ft - toggle file tree
+        gd - go to definition
+        <C-o> - go back from definition
+    windows and tabs:
+        <A-.> - next tab
+        <A-,> - previous tab
+        <A-c> - close tab
+        <A-X> - go to tab numbered X
+        <A-p> - pin tab
+        <C-p> - select tab
+        <C-A-.> - move tab right
+        <C-A-,> - move tab left
+        Space-bb - organize tabs by number
+        Space-bd - organze tabs by directory
+        Space-bl - organize tabs by language
+        Space-bw - organize tabs by window
+        Space-sh - split window horizontally
+        Space-sv - split window vertically
+        Space-sc - close window
+        Space-[hjkl] - switch window
+        Space-r[hjkl] - resize window
+        Space-re - resize equal
+
+visual modes:
+    > - indent
+    < - de-dent
+    p/P - paste
+    y/Y - yank/Yank line
+    d/D - delete/delete to eol
+    :s/X/Y - replaces X with Y
+    :s/X/Y/g - replaces all X with Y
+    K - move lines up
+    J - move lines down
+    Space-p - copy highlighted text and pasted previously highlighted
+    Space-y - copy text to system buffer
+    Space-d - del same
+    ggVG [From n] - highlight all lines/text
+    gc - block comment selected lines
+    gb - block comment selected lines 
+    :!sort - sort selected lines
+    gq - hard break text at 80 lines
+    g? - cipher text with caesar cipher 13
+    ~ - toggle case
+
+commands:
+    : - starts every command
+    lua X - runs lua code X
+    PackerSync - sync
+    so - shout out
+    Mason - yeah
+    Lazy - lazy
+
+tmux:
+    <C-Space> - prefix abbreviated []
+    []-? - list commands
+    []-[ - copy mode:
+        v - select mode
+        <C-v> - line select mode
+        y - yank
+        c - change then type escape
+    []-d - close tmux
+    tmux attach -t X - attach to session X
+    windows:
+        []-c - new window in current session - active
+        []-X - active window is X
+        []-n - next window
+        []-p - previous window
+        ALT-l - next window
+        ALT-h - previous window
+        []-& - kill window
+    panes:
+        []-% - split into panes vertically
+        []-" - split into panes horizontally
+        []-q - show pane numbers:
+            (0,1,2,...) - go to that pane
+        []-up/down/left/right - switch pane
+        []-X - kill pane
+        []-z - toggle pane focus
+        []-! - pane into new window
+        []-; - last active pane
+        []-{ - move current pane left
+        []-} - move current pane right
+        <C-[hjkl]> - change panes
+        ALT-HJKL - resize
+    sessions:
+        []-s - list sessions
+        []-:new - new session
+        []-w - preview sessions
+        []-:kill-session - kills current session
+            -a - kill all sessions but current
+        []-$ X - rename session to X
+    tmuxcheatsheet.com
+
