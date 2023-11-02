@@ -7,16 +7,16 @@ local plugins = {
     },
 
     {
-        "catppuccin/nvim",
-        name = "catppuccin",
-        build = ":colorscheme catppuccin-mocha",
+        "sekke276/dark_flat.nvim",
+        name = "dark_flat",
+        build = ":colorscheme dark_flat",
         lazy = false,
         priority = 1000,
         config = function()
-            require("catppuccin").setup()
+            require("dark_flat").setup()
 
-            vim.cmd.colorscheme "catppuccin"
-        end
+            vim.cmd.colorscheme "dark_flat"
+        end,
     },
 
     {
@@ -117,7 +117,39 @@ local plugins = {
         end,
     },
     "eandrju/cellular-automaton.nvim",
-
+    {
+        'echasnovski/mini.indentscope',
+        version = '*',
+        config = function()
+            require("mini.indentscope").setup()
+        end,
+    },
+    -- lazy.nvim
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        opts = {
+            -- add any options here
+        },
+        dependencies = {
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+            "MunifTanjim/nui.nvim",
+            -- OPTIONAL:
+            --   `nvim-notify` is only needed, if you want to use the notification view.
+            --   If not available, we use `mini` as the fallback
+            "rcarriga/nvim-notify",
+        }
+    },
+    {
+        'nvimdev/lspsaga.nvim',
+        config = function()
+            require('lspsaga').setup({})
+        end,
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter',
+            'nvim-tree/nvim-web-devicons',
+        }
+    },
 }
 
 return plugins

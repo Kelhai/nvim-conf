@@ -44,8 +44,10 @@ vim.keymap.set("n", "<leader>sh", "<C-W>S")
 vim.keymap.set("n", "<leader>sv", "<C-W>v")
 vim.keymap.set("n", "<leader>sc", "<C-W>q")
 
-vim.keymap.set("n", "<leader>ff", ":NvimTreeFocus<CR>")
-vim.keymap.set("n", "<leader>ft", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>ff", "<cmd>NvimTreeFocus<CR>")
+vim.keymap.set("n", "<leader>ft", "<cmd>NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>pd", "<cmd>Lspsaga peek_definition<CR>")
+vim.keymap.set("n", "<leader>fi", "<cmd>Lspsaga finder<CR>")
 vim.keymap.set("n", "<leader>re", "<C-W>=")
 vim.keymap.set("n", "<leader>h", "<C-W>h")
 vim.keymap.set("n", "<leader>j", "<C-W>j")
@@ -57,3 +59,4 @@ vim.keymap.set("n", "<leader>rj", "<C-W>+")
 vim.keymap.set("n", "<leader>rk", "<C-W>-")
 
 vim.keymap.set("n", "<C-s>", ":w<CR>")
+
