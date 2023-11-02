@@ -12,6 +12,7 @@ normal mode:
         k - up
         h - left
         l - right
+        XY - repeat Y, X times. Y can be movement keys or anything
         H - cursor move to top of screen
         L - cursor move to bottom of screen
         gg - beginning of file
@@ -36,6 +37,7 @@ normal mode:
         dd - delete line
         dw - delete until end of word
         d-Space - delete character
+        dXY - delete X amount of words in Y direction, Y can be w or b
         ciw - delete word and insert mode 
         ci( or ci) - delete between () and insert mode
         ci[ or ci] - delete between [] and insert mode
@@ -77,12 +79,19 @@ normal mode:
             <C-y> - confirm
             <C-Space> - complete
         Space-gd - while over the name of a file, go to that
+        Space-pd - peek definition, q to close it
+        Space-fi - finder
+        <C-c>-t - make into tab
         Space-s - replace all of current word
         :!X - bash command X on the text
         Space-ff - focus on file tree or open
         Space-ft - toggle file tree
         gd - go to definition
         <C-o> - go back from definition
+        qX - start recording to reg X
+        @X - playback register X
+        @@ - repeat last playback
+        Space-snd - dismiss notifs
     windows and tabs:
         <A-.> - next tab
         <A-,> - previous tab
