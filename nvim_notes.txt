@@ -92,6 +92,12 @@ normal mode:
         @X - playback register X
         @@ - repeat last playback
         Space-snd - dismiss notifs
+        :set spell spellang=en_us - enable spellcheck
+            z= - view spellings
+            Xz= - Xth spell correct
+            z=X<CR> - Xth spell correct
+            zg - this is the correct spelling
+            zug - this is not the correct spelling
     windows and tabs:
         <A-.> - next tab
         <A-,> - previous tab
@@ -111,6 +117,8 @@ normal mode:
         Space-[hjkl] - switch window
         Space-r[hjkl] - resize window
         Space-re - resize equal
+        <C-w>-s - split horizontally
+        <C-w>-v - split vertically
 
 visual modes:
     > - indent
@@ -140,6 +148,20 @@ commands:
     so - shout out
     Mason - yeah
     Lazy - lazy
+
+kitty:
+    tabs:
+        <C-T> - new tab
+        <C-Q> - close tab
+        <C-Right/Left> - next/previous tab
+    windows:
+        <C-Enter> - new window (split screen)
+        exit - exit terminal to close window
+        <C-}> - next window
+        <C-{> - previous window
+        <C-F> - move window to next
+        <C-B> - move window to previous
+        <C-L> - change layout
 
 tmux:
     <C-Space> - prefix abbreviated []
