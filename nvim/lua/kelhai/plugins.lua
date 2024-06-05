@@ -6,19 +6,27 @@ local plugins = {
         dependencies = { "nvim-lua/plenary.nvim" },
     },
 
-    {
-        "sekke276/dark_flat.nvim",
-        name = "dark_flat",
-        build = ":colorscheme dark_flat",
+--[[    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        build = ":colorscheme catppuccin",
         lazy = false,
         priority = 1000,
         config = function()
-            require("dark_flat").setup()
+            require("catppuccin").setup()
 
-            vim.cmd.colorscheme "dark_flat"
+            vim.cmd.colorscheme "catppuccin"
         end,
+    },--]]
+    {
+        "savq/melange-nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            vim.cmd.colorscheme("melange")
+            vim.opt.termguicolors = true
+        end
     },
-
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate"
@@ -68,7 +76,7 @@ local plugins = {
     {
         "nvim-lualine/lualine.nvim",
         as = "lualine",
-        dependencies = { "nvim-tree/nvim-web-devicons" --[[, opt = true --]] }
+        dependencies = { "nvim-tree/nvim-web-devicons" }
     },
 
     {
@@ -149,6 +157,29 @@ local plugins = {
             'nvim-treesitter/nvim-treesitter',
             'nvim-tree/nvim-web-devicons',
         }
+    },
+    {
+        "simrat39/rust-tools.nvim",
+        dependencies = {
+            "neovim/nvim-lspconfig",
+
+            -- Debugging
+            "nvim-lua/plenary.nvim",
+            "mfussenegger/nvim-dap",
+        },
+    },
+    "gpanders/nvim-parinfer",
+    {
+        "monkoose/nvlime",
+        name = "nvlime",
+        dependencies = {
+            "monkoose/parsley",
+        },
+    },
+
+    "lervag/vimtex",
+    {
+        "dense-analysis/ale",
     },
 }
 
