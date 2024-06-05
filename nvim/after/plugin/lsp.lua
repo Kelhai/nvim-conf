@@ -4,6 +4,7 @@ local lsp = require("lsp-zero")
 lsp.on_attach(function(client, bufnr)
     local opts = {buffer = bufnr, remap = false}
 
+    vim.keymap.set("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>")
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
     vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
@@ -17,7 +18,7 @@ lsp.on_attach(function(client, bufnr)
 end)
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { "lua_ls", "clangd", "rust_analyzer", },
+    ensure_installed = { "lua_ls", "clangd", "rust_analyzer", "gopls",},
     handlers = {
         lsp.default_setup,
     },
@@ -29,6 +30,11 @@ local has_words_before = function()
     return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 local luasnip = require("luasnip")
+luasnip.setup({
+    history = true,
+	region_check_events = "InsertEnter",
+	delete_check_events = "TextChanged,InsertLeave",
+})
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
@@ -36,7 +42,7 @@ cmp.setup({
     snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
-            require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+            require('luasnip').lsp_expand(args.body)
         end,
     },
     window = {
@@ -80,10 +86,36 @@ cmp.setup({
         { name = 'buffer' },
     })
 })
-
+local lspconf = require("lspconfig")
 local lua_opts = lsp.nvim_lua_ls()
-require('lspconfig').lua_ls.setup(lua_opts)
-require("lspconfig").clangd.setup({})
+lspconf.lua_ls.setup(lua_opts)
+lspconf.clangd.setup({})
+lspconf.rust_analyzer.setup({
+    filetypes = {"rust"},
+    root_dir = require("lspconfig/util").root_pattern("Cargo.toml"),
+    settings = {
+        ['rust_analyzer'] = {
+            cargo = {
+                allFeatures = true,
+            },
+        },
+    },
+})
+lspconf.gopls.setup {
+    cmd = {"gopls"},
+    filetypes = { "go", "gomod", "gowork", "gotmpl" },
+    settings = {
+        gopls = {
+            completeUnimported = true,
+            usePlaceholders = true,
+            analyses = {
+                unusedparams = true,
+            },
+        },
+    },
+}
+
+require("rust-tools").setup({})
 
 lsp.setup()
 

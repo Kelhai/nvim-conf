@@ -98,6 +98,10 @@ normal mode:
             z=X<CR> - Xth spell correct
             zg - this is the correct spelling
             zug - this is not the correct spelling
+        zfX - fold X
+        za - toggle fold
+        zd - delete fold
+        zfa} - fold current scope ({})
     windows and tabs:
         <A-.> - next tab
         <A-,> - previous tab
@@ -154,6 +158,7 @@ kitty:
         <C-T> - new tab
         <C-Q> - close tab
         <C-Right/Left> - next/previous tab
+        <C-Tab> - next tab
     windows:
         <C-Enter> - new window (split screen)
         exit - exit terminal to close window

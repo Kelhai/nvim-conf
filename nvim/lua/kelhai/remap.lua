@@ -58,5 +58,5 @@ vim.keymap.set("n", "<leader>rl", "<C-W><")
 vim.keymap.set("n", "<leader>rj", "<C-W>+")
 vim.keymap.set("n", "<leader>rk", "<C-W>-")
 
-vim.keymap.set("n", "<C-s>", ":w<CR>")
+vim.keymap.set("n", "<C-s>", "<cmd>:w<CR>")
 
