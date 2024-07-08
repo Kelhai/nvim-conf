@@ -124,7 +124,6 @@ local plugins = {
             require("nvim-tree").setup {}
         end,
     },
-    "eandrju/cellular-automaton.nvim",
     {
         'echasnovski/mini.indentscope',
         version = '*',
@@ -180,6 +179,12 @@ local plugins = {
     "lervag/vimtex",
     {
         "dense-analysis/ale",
+    },
+
+    {
+        "m4xshen/hardtime.nvim",
+        dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+        opts = {}
     },
 }
 
