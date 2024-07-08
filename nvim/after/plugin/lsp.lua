@@ -1,7 +1,7 @@
 vim.g.lsp_zero_extend_lspconfig = 0
 local lsp = require("lsp-zero")
 
-lsp.on_attach(function(client, bufnr)
+lsp.on_attach(function(_, bufnr)
     local opts = {buffer = bufnr, remap = false}
 
     vim.keymap.set("n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>")
@@ -18,7 +18,7 @@ lsp.on_attach(function(client, bufnr)
 end)
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { "lua_ls", "clangd", "rust_analyzer", "gopls",},
+    ensure_installed = { "lua_ls", "clangd", "rust_analyzer"},
     handlers = {
         lsp.default_setup,
     },
