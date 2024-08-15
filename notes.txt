@@ -1,3 +1,24 @@
+bash:
+	man history - for more info
+	**<tab> - fill in with file
+	<C-r> - see command history
+	<alt-c> - show folders
+	<C-t> - show files
+		<C-hjkl> - to move
+		<tab> - to select
+		<enter> - to select
+	when in git:
+		<C-g><C-h> - see hashes (commits)
+		<C-g><C-b> - see branches
+		<C-g><C-t> - see tags
+		<C-g><C-f> - see files
+		<C-g><C-r> - see remotes
+		<C-g><C-s> - see stashes
+		<C-g><C-l> - see reflogs
+		<C-g><C-w> - see worktrees
+		<C-g><C-e> - see each ref
+
+[n]vim:
 normal mode:
     modes:
         i - insert
@@ -34,8 +55,11 @@ normal mode:
         FX - backward to character X
         XG - go to line X
     text:
+		[ADCYP...] - do at (until) end of line
         dd - delete line
         dw - delete until end of word
+		d[Ff]X - delete forward including character X
+		d[Tt]X - delete until character X
         d-Space - delete character
         dXY - delete X amount of words in Y direction, Y can be w or b
         ciw - delete word and insert mode 
